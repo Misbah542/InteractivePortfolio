@@ -1,0 +1,120 @@
+{
+  "name": "android-dev-portfolio",
+  "version": "1.0.0",
+  "description": "Interactive open-world portfolio for Android developers",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173 --open",
+    "dev:3000": "vite --port 3000 --open",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "test": "echo \"No tests configured yet\" && exit 0",
+    "deploy": "npm run build && echo \"See DEPLOYMENT.md for deployment instructions\"",
+    "analyze": "vite build --mode analyze",
+    "clean": "rm -rf dist node_modules",
+    "setup": "npm install && cp .env.example .env.local && echo \"Setup complete! Update .env.local with your details.\""
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.263.1",
+    "clsx": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.5"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "es2020": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react/jsx-runtime",
+      "plugin:react-hooks/recommended"
+    ],
+    "ignorePatterns": [
+      "dist",
+      ".eslintrc.cjs"
+    ],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "settings": {
+      "react": {
+        "version": "18.2"
+      }
+    },
+    "plugins": [
+      "react-refresh"
+    ],
+    "rules": {
+      "react-refresh/only-export-components": [
+        "warn",
+        {
+          "allowConstantExport": true
+        }
+      ],
+      "react/prop-types": "off",
+      "no-unused-vars": [
+        "warn",
+        {
+          "argsIgnorePattern": "^_"
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "keywords": [
+    "portfolio",
+    "android",
+    "developer",
+    "interactive",
+    "game",
+    "react",
+    "canvas",
+    "kotlin",
+    "jetpack-compose",
+    "mobile-development"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/android-dev-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/android-dev-portfolio/issues"
+  },
+  "homepage": "https://your-portfolio-url.com"
+}
