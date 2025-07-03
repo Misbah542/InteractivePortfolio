@@ -1,0 +1,287 @@
+/* Mobile First Responsive Design */
+
+/* Base Mobile Styles (default) */
+.mobile-controls {
+    display: flex;
+  }
+  
+  .desktop-controls {
+    display: none;
+  }
+  
+  /* Touch-friendly sizing */
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  /* Small Tablets (sm: 640px) */
+  @media (min-width: 640px) {
+    .modal-content {
+      max-width: 90%;
+    }
+    
+    .minimap {
+      width: 180px;
+      height: 135px;
+    }
+  }
+  
+  /* Tablets (md: 768px) */
+  @media (min-width: 768px) {
+    .mobile-controls {
+      display: none;
+    }
+    
+    .desktop-controls {
+      display: flex;
+    }
+    
+    .modal-content {
+      max-width: 700px;
+    }
+    
+    .controls-panel {
+      max-width: 350px;
+    }
+    
+    /* Two column layouts */
+    .grid-responsive {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+  
+  /* Desktop (lg: 1024px) */
+  @media (min-width: 1024px) {
+    .modal-content {
+      max-width: 800px;
+    }
+    
+    .minimap {
+      width: 200px;
+      height: 150px;
+    }
+    
+    /* Three column layouts */
+    .grid-responsive {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Larger text on desktop */
+    .desktop-text-lg {
+      font-size: 1.125rem;
+    }
+  }
+  
+  /* Large Desktop (xl: 1280px) */
+  @media (min-width: 1280px) {
+    .modal-content {
+      max-width: 1000px;
+    }
+    
+    .container-responsive {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+  }
+  
+  /* Extra Large Desktop (2xl: 1536px) */
+  @media (min-width: 1536px) {
+    .modal-content {
+      max-width: 1200px;
+    }
+    
+    /* Four column layouts */
+    .grid-responsive-xl {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Portrait Mobile */
+  @media (max-width: 767px) and (orientation: portrait) {
+    /* Virtual joystick positioning */
+    .virtual-joystick {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 100px;
+      height: 100px;
+    }
+    
+    /* Action button */
+    .mobile-action-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(96, 165, 250, 0.8);
+    }
+    
+    /* Compact UI elements */
+    .mobile-ui-compact {
+      font-size: 0.875rem;
+    }
+    
+    /* Full screen modals on mobile */
+    .modal-mobile-fullscreen {
+      position: fixed;
+      inset: 0;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 0;
+    }
+  }
+  
+  /* Landscape Mobile */
+  @media (max-width: 767px) and (orientation: landscape) {
+    /* Hide non-essential UI in landscape */
+    .hide-landscape-mobile {
+      display: none;
+    }
+    
+    /* Adjust controls position */
+    .landscape-controls {
+      top: 10px;
+      bottom: auto;
+    }
+    
+    /* Smaller minimap */
+    .minimap {
+      width: 120px;
+      height: 90px;
+    }
+  }
+  
+  /* Touch Device Styles */
+  @media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects on touch devices */
+    .hover-effect:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    
+    /* Larger touch targets */
+    button, a, .interactive {
+      min-height: 48px;
+      padding: 12px;
+    }
+    
+    /* Disable canvas cursor change */
+    canvas {
+      cursor: default;
+    }
+  }
+  
+  /* High Resolution Displays */
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    /* Crisp borders and text */
+    .pixel-perfect {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+  }
+  
+  /* Foldable Devices */
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    /* Optimize for foldable screens */
+    .foldable-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    /* Hide interactive elements */
+    canvas,
+    .controls,
+    .minimap,
+    .mobile-controls,
+    button:not(.print-button) {
+      display: none !important;
+    }
+    
+    /* Expand content for print */
+    .modal-content {
+      max-width: 100%;
+      box-shadow: none;
+      border: 1px solid #000;
+    }
+    
+    /* Black text on white background */
+    body {
+      background: white;
+      color: black;
+    }
+    
+    /* Show print-only content */
+    .print-only {
+      display: block !important;
+    }
+  }
+  
+  /* Accessibility - Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    /* Disable all animations */
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    
+    /* Remove parallax effects */
+    .parallax {
+      transform: none !important;
+    }
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    /* Increase contrast for better visibility */
+    .high-contrast-border {
+      border: 2px solid currentColor;
+    }
+    
+    /* Stronger text shadows */
+    .high-contrast-text {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+    
+    /* More visible focus states */
+    :focus {
+      outline: 3px solid currentColor;
+      outline-offset: 3px;
+    }
+  }
+  
+  /* Dark Mode (already default, but for systems that prefer light) */
+  @media (prefers-color-scheme: light) {
+    /* Option to provide light theme */
+    .light-theme {
+      --bg-primary: #ffffff;
+      --text-primary: #0f172a;
+      /* Add more light theme variables */
+    }
+  }
+  
+  /* Network-Aware Styles */
+  @media (prefers-reduced-data: reduce) {
+    /* Disable heavy assets on slow connections */
+    .heavy-asset {
+      display: none;
+    }
+    
+    /* Use simpler graphics */
+    .simple-graphics {
+      background: currentColor;
+    }
+  }

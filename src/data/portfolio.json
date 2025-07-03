@@ -1,0 +1,357 @@
+{
+    "about": {
+      "name": "Alex Chen",
+      "title": "Senior Android Developer",
+      "bio": "Passionate Android developer with 5+ years of experience building innovative mobile applications. I specialize in Kotlin, Jetpack Compose, and modern Android architecture patterns. I love creating smooth, intuitive user experiences and solving complex technical challenges.",
+      "avatar": "👨‍💻",
+      "location": "San Francisco, CA",
+      "availability": "Open to opportunities"
+    },
+    "skills": [
+      {
+        "name": "Kotlin",
+        "level": 95,
+        "icon": "🔥",
+        "category": "language"
+      },
+      {
+        "name": "Java",
+        "level": 85,
+        "icon": "☕",
+        "category": "language"
+      },
+      {
+        "name": "Jetpack Compose",
+        "level": 90,
+        "icon": "🎨",
+        "category": "framework"
+      },
+      {
+        "name": "Android SDK",
+        "level": 95,
+        "icon": "📱",
+        "category": "platform"
+      },
+      {
+        "name": "MVVM/MVI",
+        "level": 85,
+        "icon": "🏗️",
+        "category": "architecture"
+      },
+      {
+        "name": "Coroutines/Flow",
+        "level": 88,
+        "icon": "🔄",
+        "category": "async"
+      },
+      {
+        "name": "Room/SQLite",
+        "level": 82,
+        "icon": "💾",
+        "category": "database"
+      },
+      {
+        "name": "Retrofit/REST",
+        "level": 90,
+        "icon": "🌐",
+        "category": "networking"
+      },
+      {
+        "name": "Dagger/Hilt",
+        "level": 80,
+        "icon": "💉",
+        "category": "di"
+      },
+      {
+        "name": "Git/CI/CD",
+        "level": 85,
+        "icon": "🔧",
+        "category": "tools"
+      },
+      {
+        "name": "Unit/UI Testing",
+        "level": 78,
+        "icon": "🧪",
+        "category": "testing"
+      },
+      {
+        "name": "Material Design",
+        "level": 92,
+        "icon": "🎯",
+        "category": "design"
+      }
+    ],
+    "experience": [
+      {
+        "id": "techcorp",
+        "company": "TechCorp Solutions",
+        "role": "Senior Android Developer",
+        "period": "2022 - Present",
+        "location": "San Francisco, CA",
+        "description": "Led development of flagship Android app with 1M+ downloads. Architected scalable solutions and mentored junior developers.",
+        "achievements": [
+          "Reduced app size by 40% through modularization",
+          "Improved app performance by 60% using Baseline Profiles",
+          "Implemented offline-first architecture with 99.9% sync reliability",
+          "Mentored team of 5 junior developers",
+          "Led migration from XML to Jetpack Compose"
+        ],
+        "technologies": [
+          "Kotlin",
+          "Compose",
+          "GraphQL",
+          "AWS",
+          "GitHub Actions"
+        ]
+      },
+      {
+        "id": "startupHub",
+        "company": "StartupHub",
+        "role": "Android Developer",
+        "period": "2020 - 2022",
+        "location": "Austin, TX",
+        "description": "Built social networking app from scratch using Jetpack Compose. Implemented real-time features and complex UI interactions.",
+        "achievements": [
+          "Developed real-time chat with WebSocket",
+          "Built custom camera with ML Kit integration",
+          "Achieved 4.8★ rating on Play Store",
+          "Reduced crash rate to < 0.1%"
+        ],
+        "technologies": [
+          "Kotlin",
+          "Compose",
+          "Firebase",
+          "ML Kit",
+          "WebRTC"
+        ]
+      },
+      {
+        "id": "mobiledev",
+        "company": "MobileDev Agency",
+        "role": "Junior Android Developer",
+        "period": "2019 - 2020",
+        "location": "Remote",
+        "description": "Worked on various client projects, gaining experience in different domains and tech stacks.",
+        "achievements": [
+          "Delivered 10+ apps to production",
+          "Learned clean architecture principles",
+          "Mastered Kotlin and modern Android",
+          "Contributed to open source libraries"
+        ],
+        "technologies": [
+          "Kotlin",
+          "Java",
+          "RxJava",
+          "Dagger",
+          "Jenkins"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "id": "weatherwise",
+        "name": "WeatherWise",
+        "icon": "☁️",
+        "description": "Beautiful weather app with ML-powered predictions and stunning animations",
+        "longDescription": "WeatherWise combines accurate weather data with machine learning to provide hyper-local weather predictions. Features beautiful animations that reflect current conditions.",
+        "tech": [
+          "Kotlin",
+          "Jetpack Compose",
+          "ML Kit",
+          "Room",
+          "WorkManager"
+        ],
+        "features": [
+          "Real-time weather updates",
+          "7-day ML-enhanced forecast",
+          "Severe weather alerts",
+          "Home screen widgets",
+          "Dark mode support",
+          "Offline functionality"
+        ],
+        "metrics": {
+          "downloads": "100K+",
+          "rating": "4.9",
+          "crashFree": "99.8%"
+        },
+        "playStore": "https://play.google.com/store/apps/details?id=com.example.weatherwise",
+        "github": "https://github.com/alexchen/weatherwise",
+        "screenshots": [
+          "weather1.png",
+          "weather2.png",
+          "weather3.png"
+        ]
+      },
+      {
+        "id": "fittracker",
+        "name": "FitTracker Pro",
+        "icon": "💪",
+        "description": "Comprehensive fitness tracking app with social features and wearable integration",
+        "longDescription": "FitTracker Pro helps users achieve their fitness goals through detailed workout tracking, social challenges, and seamless integration with popular wearables.",
+        "tech": [
+          "Kotlin",
+          "MVVM",
+          "Health Connect",
+          "Firebase",
+          "Wear OS"
+        ],
+        "features": [
+          "Custom workout builder",
+          "Progress analytics",
+          "Social challenges",
+          "Wearable sync",
+          "Nutrition tracking",
+          "Video tutorials"
+        ],
+        "metrics": {
+          "downloads": "50K+",
+          "rating": "4.7",
+          "activeUsers": "15K"
+        },
+        "playStore": "https://play.google.com/store/apps/details?id=com.example.fittracker",
+        "github": "https://github.com/alexchen/fittracker"
+      },
+      {
+        "id": "notesync",
+        "name": "NoteSync",
+        "icon": "📝",
+        "description": "Cross-platform note-taking app with real-time sync and collaboration features",
+        "longDescription": "NoteSync provides a seamless note-taking experience across all devices with real-time synchronization, rich text editing, and team collaboration features.",
+        "tech": [
+          "Kotlin Multiplatform",
+          "Compose",
+          "Ktor",
+          "SQLDelight",
+          "WebSocket"
+        ],
+        "features": [
+          "Rich text editor",
+          "Real-time sync",
+          "Offline mode",
+          "Share & collaborate",
+          "Voice notes",
+          "PDF export"
+        ],
+        "metrics": {
+          "downloads": "200K+",
+          "rating": "4.8",
+          "syncReliability": "99.9%"
+        },
+        "playStore": "https://play.google.com/store/apps/details?id=com.example.notesync",
+        "github": "https://github.com/alexchen/notesync"
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.S. Computer Science",
+        "school": "University of California, Berkeley",
+        "year": "2019",
+        "gpa": "3.8/4.0",
+        "coursework": [
+          "Mobile Development",
+          "Algorithms",
+          "Software Engineering",
+          "HCI"
+        ],
+        "activities": [
+          "Android Club President",
+          "Hackathon Winner",
+          "Teaching Assistant"
+        ]
+      },
+      {
+        "degree": "Google Android Developer",
+        "school": "Professional Certification",
+        "year": "2021",
+        "gpa": "Associate Level",
+        "description": "Demonstrated proficiency in Android development using Kotlin"
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Google Associate Android Developer",
+        "issuer": "Google",
+        "year": 2021,
+        "credentialId": "AAD-2021-1234",
+        "skills": [
+          "Kotlin",
+          "Android SDK",
+          "Testing",
+          "Architecture"
+        ]
+      },
+      {
+        "name": "Kotlin for Android Developers",
+        "issuer": "JetBrains",
+        "year": 2022,
+        "credentialId": "KAD-2022-5678",
+        "skills": [
+          "Kotlin",
+          "Coroutines",
+          "Flow",
+          "DSL"
+        ]
+      },
+      {
+        "name": "AWS Certified Mobile Developer",
+        "issuer": "Amazon Web Services",
+        "year": 2023,
+        "credentialId": "AWS-MOB-2023",
+        "skills": [
+          "AWS Mobile Services",
+          "Amplify",
+          "AppSync",
+          "Cognito"
+        ]
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Google Play Best App",
+        "year": 2023,
+        "description": "WeatherWise selected as Editor's Choice",
+        "icon": "🏆"
+      },
+      {
+        "title": "Open Source Contributor",
+        "year": 2022,
+        "description": "Major contributions to 15+ Android libraries",
+        "icon": "⭐"
+      },
+      {
+        "title": "Conference Speaker",
+        "year": 2023,
+        "description": "Spoke at Android Dev Summit on Compose performance",
+        "icon": "🎤"
+      },
+      {
+        "title": "Hackathon Winner",
+        "year": 2021,
+        "description": "1st place at Mobile Hack Week SF",
+        "icon": "🥇"
+      }
+    ],
+    "contact": {
+      "email": "alex.chen@example.com",
+      "phone": "+1 (555) 123-4567",
+      "linkedin": "https://linkedin.com/in/alexchen-android",
+      "github": "https://github.com/alexchen",
+      "twitter": "https://twitter.com/alexchen_dev",
+      "medium": "https://medium.com/@alexchen",
+      "calendly": "https://calendly.com/alexchen/meeting"
+    },
+    "preferences": {
+      "workType": [
+        "Full-time",
+        "Contract"
+      ],
+      "remote": true,
+      "relocation": false,
+      "startDate": "2 weeks notice",
+      "salary": {
+        "min": 150000,
+        "max": 200000,
+        "currency": "USD"
+      }
+    }
+  }

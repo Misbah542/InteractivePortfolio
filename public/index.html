@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>Android Developer Portfolio - Interactive Experience</title>
+    <meta name="title" content="Android Developer Portfolio - Interactive Experience">
+    <meta name="description" content="Explore an interactive game-like portfolio showcasing Android development skills, projects, and experience. Built with React and Canvas.">
+    <meta name="keywords" content="Android Developer, Portfolio, Interactive, Kotlin, Jetpack Compose, Mobile Development, Game Portfolio">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio-url.com/">
+    <meta property="og:title" content="Android Developer Portfolio - Interactive Experience">
+    <meta property="og:description" content="Explore an interactive game-like portfolio showcasing Android development skills. Navigate through different zones to discover projects, skills, and experience.">
+    <meta property="og:image" content="/preview.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-portfolio-url.com/">
+    <meta property="twitter:title" content="Android Developer Portfolio - Interactive Experience">
+    <meta property="twitter:description" content="Explore an interactive game-like portfolio showcasing Android development skills. Navigate through different zones to discover projects, skills, and experience.">
+    <meta property="twitter:image" content="/preview.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo192.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0f172a">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Critical CSS for initial load */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: #0f172a;
+            color: #ffffff;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            touch-action: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        #root {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        /* Initial loading screen */
+        .initial-loader {
+            position: fixed;
+            inset: 0;
+            background-color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            flex-direction: column;
+        }
+        
+        .loader-icon {
+            font-size: 4rem;
+            animation: bounce 1s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .loader-text {
+            color: #60a5fa;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .loader-subtext {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+        
+        /* Prevent scroll bounce on iOS */
+        html {
+            position: fixed;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            position: fixed;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        /* Canvas cursor */
+        canvas {
+            cursor: crosshair;
+        }
+        
+        /* Focus styles */
+        :focus-visible {
+            outline: 2px solid #60a5fa;
+            outline-offset: 2px;
+        }
+        
+        /* Scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+        
+        /* Disable pull-to-refresh on mobile */
+        body {
+            overscroll-behavior-y: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Initial Loading Screen -->
+    <div class="initial-loader" id="initial-loader">
+        <div class="loader-icon">🎮</div>
+        <div class="loader-text">Android Dev World</div>
+        <div class="loader-subtext">Loading adventure...</div>
+    </div>
+    
+    <!-- React Root -->
+    <div id="root"></div>
+    
+    <!-- Fallback for No JavaScript -->
+    <noscript>
+        <style>
+            .initial-loader { display: none !important; }
+            .noscript-message {
+                position: fixed;
+                inset: 0;
+                background-color: #0f172a;
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 2rem;
+            }
+            .noscript-content {
+                max-width: 600px;
+            }
+            .noscript-content h1 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                color: #60a5fa;
+            }
+            .noscript-content p {
+                margin-bottom: 1rem;
+                color: #94a3b8;
+            }
+            .noscript-content a {
+                color: #60a5fa;
+                text-decoration: none;
+            }
+            .noscript-content a:hover {
+                text-decoration: underline;
+            }
+        </style>
+        <div class="noscript-message">
+            <div class="noscript-content">
+                <h1>JavaScript Required</h1>
+                <p>This interactive portfolio requires JavaScript to run. Please enable JavaScript in your browser settings to explore the full experience.</p>
+                <p>In the meantime, you can:</p>
+                <p>
+                    📄 <a href="/resume.pdf">Download my resume (PDF)</a><br><br>
+                    📧 Contact me at: <a href="mailto:your-email@example.com">your-email@example.com</a><br><br>
+                    💼 View my LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a><br><br>
+                    🐙 Check my GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a>
+                </p>
+            </div>
+        </div>
+    </noscript>
+    
+    <!-- Performance Monitoring -->
+    <script>
+        // Hide initial loader when React app loads
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('initial-loader');
+                if (loader) {
+                    loader.style.transition = 'opacity 0.5s';
+                    loader.style.opacity = '0';
+                    setTimeout(function() {
+                        loader.style.display = 'none';
+                    }, 500);
+                }
+            }, 100);
+        });
+        
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', function() {
+                const perfData = window.performance.timing;
+                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`Page load time: ${pageLoadTime}ms`);
+                
+                // Send to analytics if configured
+                if (window.gtag) {
+                    window.gtag('event', 'page_load_time', {
+                        value: pageLoadTime,
+                        event_category: 'performance'
+                    });
+                }
+            });
+        }
+        
+        // Prevent zoom on iOS
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+        
+        // Prevent double-tap zoom
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+        
+        // Check for WebGL support
+        function checkWebGL() {
+            try {
+                const canvas = document.createElement('canvas');
+                return !!(window.WebGLRenderingContext && 
+                    (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+            } catch(e) {
+                return false;
+            }
+        }
+        
+        if (!checkWebGL()) {
+            console.warn('WebGL not supported. Some features may be limited.');
+        }
+        
+        // Mobile detection
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            document.body.classList.add('is-mobile');
+        }
+        
+        // Add viewport height CSS variable for mobile
+        function setViewportHeight() {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+        
+        // Console Easter Egg
+        console.log('%c🎮 Welcome to Android Dev World! 🎮', 
+            'font-size: 24px; font-weight: bold; color: #60a5fa;');
+        console.log('%cBuilt with ❤️ using React and Canvas', 
+            'font-size: 14px; color: #94a3b8;');
+        console.log('%cLooking for the source code? Check out: https://github.com/your-username/portfolio', 
+            'font-size: 12px; color: #10b981;');
+    </script>
+    
+    <!-- Analytics (Google Analytics example - replace with your ID) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+</body>
+</html>
