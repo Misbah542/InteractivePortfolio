@@ -202,6 +202,16 @@ class GameEngine {
   }
 
   render() {
+
+    const ctx = this.ctx;
+  if (!ctx) return;
+
+  ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    ctx.fillStyle = "white";
+  ctx.font = "24px monospace";
+  ctx.fillText("Hello Android Dev World!", 100, 100);
+    console.log("🖼️ Rendering frame");
     // Clear canvas
     this.ctx.fillStyle = '#0f172a';
     this.ctx.fillRect(0, 0, this.width, this.height);
@@ -362,6 +372,22 @@ class GameEngine {
         zone.height * mapScale
       );
     });
+
+    this.zones = [{
+      x: 100, y: 100, width: 300, height: 200,
+      name: "Sample Zone",
+      color: "#22d3ee",
+      icon: "🧪"
+    }];
+    
+    this.interactables = [{
+      x: 200, y: 200,
+      color: "#f472b6",
+      label: "Test Button",
+      icon: "🔘",
+      type: "about",
+      data: {}
+    }];
     
     // Draw interactables
     this.interactables.forEach(item => {
@@ -410,6 +436,7 @@ class GameEngine {
   }
 
   start() {
+    console.log("🚀 Game loop started");
     this.animationId = requestAnimationFrame((time) => this.gameLoop(time));
   }
 

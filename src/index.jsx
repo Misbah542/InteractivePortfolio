@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './styles/globals.css';
 import './styles/animations.css';
 import './styles/responsive.css';
-import App from './App';
+import App from './App.jsx';
 
 // Performance monitoring
 if ('performance' in window) {
